@@ -13,7 +13,7 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("https://e-schop-tn-angular-rest-spring.herokuapp.com");
+                registry.addMapping("/**").allowedOrigins("https://zarrouk-backend.herokuapp.com");
             }
         };
     }
