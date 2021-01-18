@@ -16,7 +16,7 @@ import java.util.List;
  * REST controller Pour gerer Produit.
  */
 @RestController
-@CrossOrigin(origins = "https://zarrouk-backend.herokuapp.com")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 public class ProduitController {
 
