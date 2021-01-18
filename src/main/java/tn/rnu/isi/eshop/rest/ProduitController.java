@@ -16,6 +16,7 @@ import java.util.List;
  * REST controller Pour gerer Produit.
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/api")
 public class ProduitController {
 
