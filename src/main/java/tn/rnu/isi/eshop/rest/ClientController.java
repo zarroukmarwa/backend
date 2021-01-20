@@ -17,6 +17,7 @@ import java.util.List;
  * REST controller pour gerer Client.
  */
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 public class ClientController {
 

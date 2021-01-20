@@ -17,6 +17,7 @@ import java.util.List;
  * REST controller pour gerer Commande.
  */
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 public class CommandeController {
 
