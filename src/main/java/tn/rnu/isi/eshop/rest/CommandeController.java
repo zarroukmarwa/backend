@@ -42,10 +42,10 @@ public class CommandeController {
     }
 
     @PostMapping("/commandes")
-    void addCommande(@RequestBody Commande commande) throws URISyntaxException {
+    void addCommande(@RequestBody Commande commande){
     	commandeRepository.save(commande);
     }
-     
+    
     @PutMapping("/commandes")
     public void updateCommande(@RequestBody Commande commande)  {
          if (commande.getIdCommande() != null) {
