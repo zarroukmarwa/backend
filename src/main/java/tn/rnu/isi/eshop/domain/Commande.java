@@ -66,24 +66,24 @@ public class Commande implements java.io.Serializable {
 		this.idCommande = idCommande;
 	}
 	
-	@JsonIgnore
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CLIENT", nullable = false)
 	public Client getClient() {
 		return this.client;
 	}
-	@JsonIgnore
+	
 	public void setClient(Client client) {
 		this.client = client;
 	}
 
-	@JsonIgnore
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_PRODUIT",  nullable = false)
 	public Produit getProduit() {
 		return this.produit;
 	}
-	@JsonIgnore
+
 	public void setProduit(Produit produit) {
 		this.produit = produit;
 	}
