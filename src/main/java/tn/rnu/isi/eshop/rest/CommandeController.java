@@ -18,6 +18,7 @@ import java.util.List;
  */
 @RestController
 @CrossOrigin(origins = "*")
+@RequestMapping("/api")
 public class CommandeController {
 
     private final Logger log = LoggerFactory.getLogger(CommandeController.class);
