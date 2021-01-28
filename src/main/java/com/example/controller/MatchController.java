@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.model.Match;
 import com.example.service.MatchService;
 
-//@CrossOrigin("http://localhost:4200")
+
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("api/matches")
 public class MatchController {
 	

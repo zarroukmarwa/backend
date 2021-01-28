@@ -18,7 +18,7 @@ import com.example.security.MyUserDetailsService;
 import com.example.util.JwtUtil;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class LoginController {
 
 	@Autowired
