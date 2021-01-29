@@ -22,10 +22,16 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 	private JwtRequestFilter jwtRequestFilter;
     
 	@Override
-	public void configure(HttpSecurity http) throws Exception {
-		
+	protected void configure(HttpSecurity http) throws Exception {
+		http.csrf().disable()
+			.authorizeRequests().antMatchers("/login", "/h2-console/**", "/api/users").permitAll()
+				.anyRequest().permitAll()
+				.and().sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+		http.headers().frameOptions().disable();
 	} 
-	
+
 	@Override
 	@Bean
 	public AuthenticationManager authenticationManagerBean() throws Exception {
