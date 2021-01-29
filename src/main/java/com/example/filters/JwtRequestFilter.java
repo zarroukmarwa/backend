@@ -28,7 +28,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     private JwtUtil jwtUtil;
     
 	@Value("${permitted-url}")
-	private String permittedUrl = "https://sportfootball.herokuapp.com/*";
+	private String permittedUrl = "*";
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
