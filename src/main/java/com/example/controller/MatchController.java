@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.model.Match;
 import com.example.service.MatchService;
 
-
+@CrossOrigin(origins = "https://zarrouk-backend.herokuapp.com")
 @RestController
 @RequestMapping("api/matches")
 public class MatchController {
