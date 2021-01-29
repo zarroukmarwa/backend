@@ -23,18 +23,13 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
-		http.authorizeRequests().andMatchers("/login", "/h2-console/**", "/api/users")
-		.permitAll()
-		.antMatchers("/login").permitAll()
-		.anyRequest().fullyAuthenticated()
-		.and()
-		.httpBasic()
-		.and()
-		.sessionManagement()
-		.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and()
-		.csrf().disable();
+		http.csrf().disable()
+			.authorizeRequests().antMatchers("/login", "/**", "/api/users").permitAll()
+				.anyRequest().permitAll()
+				.and().sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+		http.headers().frameOptions().disable();
 	} 
 
 	@Override
