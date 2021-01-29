@@ -26,7 +26,9 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
 		http.csrf().disable()
 			.authorizeRequests().antMatchers("/login", "/h2-console/**", "/api/users").permitAll()
 				.anyRequest().permitAll()
-				.and().sessionManagement()
+				.and()
+				.httpBasic()
+				.sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 		http.headers().frameOptions().disable();
