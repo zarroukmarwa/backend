@@ -17,7 +17,6 @@ import com.example.service.MatchService;
 
 
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping("api/matches")
 public class MatchController {
 	
